@@ -8,13 +8,14 @@ import {
   Tab,
   Tabs
 } from "@heroui/react"
-import { forOwn, has, isObject } from "lodash"
+import { forOwn, has, isObject, startCase } from "lodash"
 import React from "react"
 
 import BlurView from "~components/blur-view"
 import { IonChevronBack } from "~components/icons/IonChevronBack"
 import View from "~components/view"
-import cdn from "~constants/cdn"
+import cdn from "~json/cdn.json"
+import pixabay from "~json/pixabay.json"
 import { cn } from "~lib/cn"
 import { modes } from "~newtab/items"
 import useEnvironmentStore from "~store/slice/environment"
@@ -28,22 +29,19 @@ const EnvironmentsScreen: React.FC<EnvironmentsProps> = () => {
   const { state, updateState } = useEnvironmentStore()
 
   const [dayItems, nightItems] = React.useMemo(() => {
-    const day = []
-    const night = []
+    const day: any[] = []
+    const night: any[] = []
 
-    // Flatten all images recursively
-    function flattenImages(obj: any) {
+    function flattenImages(obj: any, parentKey?: string) {
       forOwn(obj, (value, key) => {
         if (has(value, "sources") && isObject(value.sources)) {
-          const entry = {
-            name: key,
-            sources: value.sources
-          }
-          // Determine environment based on key/folder name
-          if (key.toLowerCase().includes(Mode.Day)) day.push(entry)
-          else if (key.toLowerCase().includes(Mode.Night)) night.push(entry)
+          const entry = { name: key, sources: value.sources }
+
+          // Use parent folder key to detect environment
+          if (parentKey?.toLowerCase() === Mode.Day) day.push(entry)
+          else if (parentKey?.toLowerCase() === Mode.Night) night.push(entry)
         } else if (isObject(value)) {
-          flattenImages(value) // recurse into nested folders
+          flattenImages(value, key) // pass current key as parent
         }
       })
     }
@@ -51,9 +49,8 @@ const EnvironmentsScreen: React.FC<EnvironmentsProps> = () => {
     flattenImages(cdn)
 
     return [day, night]
-  }, [])
+  }, [cdn])
 
-  console.log(nightItems)
   return (
     <BlurView className="min-w-160 min-h-128 flex flex-col rounded-4xl">
       {/* ── Header Section ── */}
@@ -94,7 +91,7 @@ const EnvironmentsScreen: React.FC<EnvironmentsProps> = () => {
 
       {/* ── Main Content / Grid ── */}
       <CardBody className="grid grid-cols-3 gap-4 p-6 max-h-96 overflow-auto">
-        {nightItems.map((item) => {
+        {[...nightItems, ...pixabay].map((item) => {
           return (
             <View
               key={item.name}
@@ -115,7 +112,7 @@ const EnvironmentsScreen: React.FC<EnvironmentsProps> = () => {
 
               {/* Room name */}
               <p className="mt-3 text-sm font-medium text-default-foreground/75">
-                {item.name}
+                {startCase(item.name)}
               </p>
             </View>
           )

@@ -1,4 +1,4 @@
-import { Card, Image, Tab, Tabs } from "@heroui/react"
+import { Card, Image, Link, Tab, Tabs } from "@heroui/react"
 import { sum } from "lodash"
 import { AnimatePresence, motion } from "motion/react"
 import React from "react"
@@ -6,7 +6,8 @@ import React from "react"
 import { SolarPenBold } from "~components/icons/SolarPenBold"
 import View from "~components/view"
 import { indicatorVariants } from "~constants/animation"
-import { apps, tabs } from "~newtab/items"
+import { apps } from "~constants/apps"
+import { tabs } from "~newtab/items"
 
 type AppsScreenProps = {
   // Define your props here
@@ -46,7 +47,7 @@ export default AppsScreen
 type App = {
   title: string
   source: string
-  url?: string
+  href?: string
 }
 
 type Props = {
@@ -89,27 +90,35 @@ const AppCarousel: React.FC<Props> = ({ apps }) => {
             return (
               <motion.div
                 key={rowIndex}
-                className={`flex-1 grid grid-cols-${String(cols)} gap-16 items-center`}
+                style={{
+                  gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`
+                }}
+                className={`flex-1 grid gap-16 items-center`}
                 variants={containerVariants}>
                 {rowItems.map((app, index) => (
-                  <motion.div
+                  <Link
                     key={index}
-                    role="button"
-                    className="flex flex-col items-center cursor-pointer outline-default-foreground/50 p-1 rounded-3xl"
-                    variants={appVariants}
-                    whileHover="hover"
-                    custom={index}
-                    whileTap={{ scale: 0.95 }}>
-                    <Image
-                      src={app.source}
-                      radius="none"
-                      className="size-24"
-                      alt={app.title}
-                    />
-                    <span className="text-default-foreground text-sm font-medium mt-2">
-                      {app.title}
-                    </span>
-                  </motion.div>
+                    href={app.href}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <motion.div
+                      role="button"
+                      className="flex flex-col items-center cursor-pointer outline-default-foreground/50 p-1 rounded-3xl"
+                      variants={appVariants}
+                      whileHover="hover"
+                      custom={index}
+                      whileTap={{ scale: 0.95 }}>
+                      <Image
+                        src={app.source}
+                        radius="none"
+                        className="size-24"
+                        alt={app.title}
+                      />
+                      <span className="text-default-foreground text-sm font-medium mt-2">
+                        {app.title}
+                      </span>
+                    </motion.div>
+                  </Link>
                 ))}
               </motion.div>
             )

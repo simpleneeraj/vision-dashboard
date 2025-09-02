@@ -1,0 +1,65 @@
+[
+  {
+    "name": "architecture",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2020/06/25/10/21/architecture-5339245_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2020/06/25/10/21/architecture-5339245_1280.jpg"
+    }
+  },
+  {
+    "name": "living-room",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg"
+    }
+  },
+  {
+    "name": "room",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2020/01/20/10/33/room-4779953_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2020/01/20/10/33/room-4779953_1280.jpg"
+    }
+  },
+  {
+    "name": "living-room",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2014/12/27/14/37/living-room-581073_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2014/12/27/14/37/living-room-581073_1280.jpg"
+    }
+  },
+  {
+    "name": "kitchen-living-room",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2019/03/08/20/14/kitchen-living-room-4043091_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2019/03/08/20/14/kitchen-living-room-4043091_1280.jpg"
+    }
+  },
+  {
+    "name": "kitchen",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_1280.jpg"
+    }
+  },
+  {
+    "name": "furniture",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_1280.jpg"
+    }
+  },
+  {
+    "name": "living-room",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2019/03/05/22/58/living-room-4037295_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2019/03/05/22/58/living-room-4037295_1280.jpg"
+    }
+  },
+  {
+    "name": "luggage",
+    "sources": {
+      "sm": "https://cdn.pixabay.com/photo/2012/07/25/13/48/luggage-52831_1280.jpg",
+      "lg": "https://cdn.pixabay.com/photo/2012/07/25/13/48/luggage-52831_1280.jpg"
+    }
+  }
+]
