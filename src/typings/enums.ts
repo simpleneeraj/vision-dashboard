@@ -10,6 +10,6 @@ export enum StorageKeys {
 }
 
 export enum Mode {
-  Night = "Night",
-  Day = "Day"
+  Night = "night",
+  Day = "day"
 }

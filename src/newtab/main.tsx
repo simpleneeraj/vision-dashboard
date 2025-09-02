@@ -11,7 +11,7 @@ import BackgroundLayer from "./layer"
 const MenuBar = lazy(() => import("./elements/menu-bar"))
 const AppsScreen = lazy(() => import("~newtab/screens/apps"))
 const MindfulnessCard = lazy(() => import("~newtab/screens/mindfulness"))
-const EnvironmentsScreen = lazy(() => import("~newtab/screens/envirnoments"))
+const EnvironmentsScreen = lazy(() => import("~newtab/screens/environments"))
 
 type TestProps = {
   // Add props here if needed in future
