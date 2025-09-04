@@ -34,7 +34,8 @@ export enum CategoryKey {
   GOOGLE = "google",
   APPLE = "apple",
   MICROSOFT = "microsoft",
-  DEVELOPER = "developer"
+  DEVELOPER = "developer",
+  TEACHER = "teacher"
 }
 
 export enum AppTab {

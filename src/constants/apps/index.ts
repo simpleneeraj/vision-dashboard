@@ -6,6 +6,7 @@ import { developerApps } from "./developer"
 import { googleApps } from "./google"
 import { microsoftApps } from "./microsoft"
 import { socialApps } from "./social"
+import { teachersDay } from "./teacher"
 
 export const tabs = [
   {
@@ -30,16 +31,22 @@ export const tabs = [
   },
   {
     key: CategoryKey.SOCIAL,
-    title: "Social & Entertainment"
+    title: "Social"
   }
 ]
 
 export const tabsWithApps = [
   {
+    key: CategoryKey.TEACHER,
+    title: "🎉 Happy Teachers' Day!",
+    links: teachersDay
+  },
+  {
     key: CategoryKey.HOME,
     title: "Google",
     links: googleApps
   },
+
   {
     key: CategoryKey.APPLE,
     title: "Apple",
@@ -54,15 +61,15 @@ export const tabsWithApps = [
     key: CategoryKey.DEVELOPER,
     title: "Developer",
     links: developerApps
-  },
-  {
-    key: CategoryKey.AI,
-    title: "AI",
-    links: aiApps
-  },
-  {
-    key: CategoryKey.SOCIAL,
-    title: "Social & Entertainment",
-    links: socialApps
   }
+  // {
+  //   key: CategoryKey.AI,
+  //   title: "AI",
+  //   links: aiApps
+  // },
+  // {
+  //   key: CategoryKey.SOCIAL,
+  //   title: "Social",
+  //   links: socialApps
+  // }
 ]
