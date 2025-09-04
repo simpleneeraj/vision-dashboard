@@ -1,16 +1,17 @@
 import "~styles/globals.css"
 
+import SWRProvider from "~provider/swr"
 import AppUIProvider from "~provider/ui"
 
 import MainSection from "./main"
 
 function NewTab() {
   return (
-    <AppUIProvider>
-      <div className="dark text-foreground bg-background">
+    <SWRProvider>
+      <AppUIProvider>
         <MainSection />
-      </div>
-    </AppUIProvider>
+      </AppUIProvider>
+    </SWRProvider>
   )
 }
 

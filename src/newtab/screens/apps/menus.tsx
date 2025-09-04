@@ -2,23 +2,22 @@ import { Button } from "@heroui/react"
 import { capitalize } from "lodash"
 import React from "react"
 
-import BlurView from "~components/blur-view"
+import BlurView from "~components/view/blur-view"
+import menus from "~constants/menus"
 import { cn } from "~lib/cn"
-import { menuItems } from "~newtab/items"
-import useScreenStore from "~store/slice/menu-bar"
+import useAppStore from "~store/slice/app"
 
-type MenuBarProps = {
-  // Define your props here
-}
+type AppMenusProps = {}
 
-const MenuBar: React.FC<MenuBarProps> = ({}) => {
-  const { state, updateState } = useScreenStore()
+const AppMenus: React.FC<AppMenusProps> = ({}) => {
+  const { state, updateState } = useAppStore()
+
   return (
     <div className="fixed top-1/2 left-[16%] z-20 flex items-center justify-center -translate-y-1/2">
       <BlurView className="rounded-full p-2">
         <div className="flex flex-col gap-2">
-          {menuItems.map((item, index) => {
-            const active = state?.screen === item?.title
+          {menus.map((item, index) => {
+            const active = state?.navigation.screen === item?.title
             return (
               <Button
                 key={index}
@@ -29,7 +28,7 @@ const MenuBar: React.FC<MenuBarProps> = ({}) => {
                   active && "bg-white/20 backdrop-blur-sm"
                 )}
                 title={capitalize(item.title)}
-                onPress={() => updateState("screen", item?.title)}>
+                onPress={() => updateState("navigation.screen", item?.title)}>
                 <item.icon
                   className={cn(
                     active ? "opacity-75" : "opacity-40",
@@ -45,4 +44,4 @@ const MenuBar: React.FC<MenuBarProps> = ({}) => {
   )
 }
 
-export default MenuBar
+export default AppMenus

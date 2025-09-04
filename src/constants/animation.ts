@@ -1,10 +1,17 @@
 import type { Variants } from "motion"
 
+export const fadeInVariants: Variants = {
+  initial: { opacity: 0, scale: 0.98 },
+  animate: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.98 }
+}
+
 export const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.05 // apps come one after another
+      staggerChildren: 0.08, // delay between each child
+      delayChildren: 0.1 // initial delay
     }
   }
 }
@@ -50,19 +57,17 @@ export const indicatorVariants: Variants = {
 export const screenVariants: Variants = {
   initial: {
     y: 20,
-    rotateX: 15,
+    // rotateX: 15,
     scale: 0.95,
     transformPerspective: 600
   },
   animate: {
     y: 0,
-    rotateX: 0,
     scale: 1,
     transition: { type: "spring", stiffness: 250, damping: 25 }
   },
   exit: {
     y: -20,
-    rotateX: -15,
     scale: 0.95,
     transition: { duration: 0.25, ease: "easeInOut" }
   }

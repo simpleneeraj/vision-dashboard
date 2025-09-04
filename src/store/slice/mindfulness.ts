@@ -1,6 +1,6 @@
 import { StorageKeys } from "~typings/enums"
 
-import { ChromeStorageCreator } from "../lib/creator"
+import { createExtensionStore } from "../lib/creator"
 
 const initialState = {
   timer: 5,
@@ -10,7 +10,7 @@ const initialState = {
 
 export type MindfulnessStateType = typeof initialState
 
-const useMindfulnessStore = ChromeStorageCreator<MindfulnessStateType>(
+const useMindfulnessStore = createExtensionStore<MindfulnessStateType>(
   initialState,
   StorageKeys.MINDFULNESS
 )

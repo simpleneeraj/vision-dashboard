@@ -9,15 +9,17 @@ import { animate } from "motion"
 import { motion, useMotionValue, useTransform } from "motion/react"
 import React from "react"
 
-import BlurView from "~components/blur-view"
+import { SolarPauseBold } from "~components/icons/SolarPauseBold"
+import { SolarPlayBold } from "~components/icons/SolarPlayBold"
 import View from "~components/view"
+import BlurView from "~components/view/blur-view"
 import {
   introMindfulnessTexts,
   mindfulnessMessages
 } from "~constants/mindfulness"
 import { useInterval } from "~hooks/use-interval"
-import MindfulnessMessage from "~newtab/elements/mindfulness-message"
-import TimerDropdown from "~newtab/elements/timer-dropdown"
+import MindfulnessMessage from "~newtab/screens/mindfulness/message"
+import TimerDropdown from "~newtab/screens/mindfulness/timer"
 import useMindfulnessStore from "~store/slice/mindfulness"
 
 export default function MindfulnessCard() {
@@ -142,7 +144,20 @@ export default function MindfulnessCard() {
                 updateState("isRunning", true)
               }
             }}
-            className="flex items-center rounded-full bg-white/10 hover:bg-white/20 transition">
+            className="flex items-center rounded-full bg-white/10 hover:bg-white/20 transition text-default-foreground/75">
+            <motion.div
+              key={state.isRunning ? "pause" : "play"}
+              initial={{ scale: 0, rotate: -90, opacity: 0 }}
+              animate={{ scale: 1, rotate: 0, opacity: 1 }}
+              exit={{ scale: 0, rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.3 }}>
+              {state.isRunning ? (
+                <SolarPauseBold className="size-4" />
+              ) : (
+                <SolarPlayBold className="size-4" />
+              )}
+            </motion.div>
+
             {state.isRunning ? "Pause" : "Start"}
           </Button>
         </CardFooter>

@@ -1,0 +1,71 @@
+import { BLUR_PRESETS, OPACITY_PRESETS } from "~constants/presets"
+import type { RootState } from "~typings/app"
+import {
+  CategoryKey,
+  MenuScreenEnums,
+  StorageKeys,
+  Theme
+} from "~typings/enums"
+
+import { createExtensionStore } from "../lib/creator"
+
+const initialState: RootState = {
+  /**
+   * Navigation and screen management
+   */
+  navigation: {
+    screen: MenuScreenEnums.Apps,
+    launchpad: {
+      category: CategoryKey.HOME
+    }
+  },
+  /**
+   * Display settings and visual appearance
+   */
+  display: {
+    appearance: {
+      colorScheme: Theme.DARK
+    },
+    wallpaper: {
+      picture: process.env.PLASMO_PUBLIC_VISION_ASSET_URL || "",
+      effects: {
+        blur: {
+          enabled: false,
+          intensity: BLUR_PRESETS.medium
+        },
+        transparency: {
+          enabled: false,
+          value: OPACITY_PRESETS.medium
+        }
+      }
+    }
+  },
+  /**
+   * User onboarding and profile information
+   */
+  onboarding: {
+    id: null,
+    email: null,
+    name: null,
+    avatar: null,
+    preferences: {
+      language: "en",
+      permissions: false,
+      notifications: false,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+    },
+    metadata: {
+      createdAt: null,
+      lastLoginAt: null
+    }
+  }
+}
+
+export type AppStateTypes = typeof initialState
+
+const useAppStore = createExtensionStore<AppStateTypes>(
+  initialState,
+  StorageKeys.APP
+)
+
+export default useAppStore

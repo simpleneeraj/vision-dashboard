@@ -37,7 +37,7 @@ function TimerDropdown({ value, onSelect }: Props) {
       <DropdownTrigger>
         <Button
           fullWidth
-          className="flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 transition px-3 py-2">
+          className="flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 transition px-3 py-2 text-default-foreground/75">
           <SolarAlarmPlayBold className="size-4" />
           <motion.span>{rounded}</motion.span>
           <IonChevronForward className="size-4" />
