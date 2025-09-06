@@ -1,20 +1,24 @@
 import { SimpleIconsAppstore } from "~components/icons/SimpleIconsAppstore"
-import { SolarGalleryWideBold } from "~components/icons/SolarGalleryWideBold"
-import { SolarMoonSleepBold } from "~components/icons/SolarMoonSleepBold"
-import { SolarWidget3Bold } from "~components/icons/SolarWidget3Bold"
+import { SolarBoxMinimalisticBold } from "~components/icons/SolarBoxMinimalisticBold"
+import { SolarGalleryCircleBold } from "~components/icons/SolarGalleryCircleBold"
+import { SolarMoonStarsBold } from "~components/icons/SolarMoonStarsBold"
 import { MenuScreenEnums } from "~typings/enums"
 
 export default [
   {
-    title: MenuScreenEnums.Apps,
+    title: MenuScreenEnums.APPS,
     icon: SimpleIconsAppstore
   },
   {
-    title: MenuScreenEnums.Mindfulness,
-    icon: SolarMoonSleepBold
+    title: MenuScreenEnums.CLOCK,
+    icon: SolarBoxMinimalisticBold
   },
   {
-    title: MenuScreenEnums.Environments,
-    icon: SolarGalleryWideBold
+    title: MenuScreenEnums.MINDFULNESS,
+    icon: SolarMoonStarsBold
+  },
+  {
+    title: MenuScreenEnums.ENVIRONMENTS,
+    icon: SolarGalleryCircleBold
   }
 ]

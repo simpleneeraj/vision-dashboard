@@ -1,7 +1,8 @@
 export enum MenuScreenEnums {
-  Apps = "APPS",
-  Mindfulness = "MINDFULNESS",
-  Environments = "ENVIRONMENTS"
+  APPS = "APPS",
+  CLOCK = "CLOCK",
+  MINDFULNESS = "MINDFULNESS",
+  ENVIRONMENTS = "ENVIRONMENTS"
 }
 export enum StorageKeys {
   APP = "APP",
@@ -54,4 +55,13 @@ export enum Theme {
 export enum Mode {
   DAY = "day",
   NIGHT = "night"
+}
+
+/**
+ * Environments
+ */
+
+export enum EnvironmentTabs {
+  ENVIRONMENTS = "environments",
+  EFFECTS = "effects"
 }

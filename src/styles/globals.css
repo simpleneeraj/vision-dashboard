@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-/* 
-@font-face {
-  font-family: "Arial Rounded";
-  font-display: swap;
-  src: url("https://1royqmt65cflcg0v.public.blob.vercel-storage.com/fonts/arial-rounded/Arial_Rounded_MT.ttf")
-    format("truetype");
-}
-@font-face {
-  font-family: "Arial Rounded";
-  font-display: swap;
-  src: url("https://1royqmt65cflcg0v.public.blob.vercel-storage.com/fonts/arial-rounded/Arial-Rounded-MT-Bold.ttf")
-    format("truetype");
-  font-weight: bold;
-} */
 
 html,
 body {
@@ -31,22 +17,8 @@ body {
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/* body {
-  height: 100vh;
-  background: url("../assets/backgrounds/night.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-} */
-
 @property --border-angle {
   inherits: false;
   initial-value: 0deg;
   syntax: "<angle>";
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
 }

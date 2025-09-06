@@ -1,13 +1,17 @@
 {
-  "name": "vision",
-  "displayName": "Vision",
-  "version": "0.0.1",
-  "description": "A basic Plasmo extension.",
-  "author": "Plasmo Corp. <foss@plasmo.com>",
+  "name": "vision-dashboard",
+  "displayName": "Vision Dashboard - Mindful Productivity Hub",
+  "version": "1.0.0",
+  "description": "Supercharge your focus with a new tab designed to eliminate distractions and amplify your productivity potential.",
+  "author": "simpleneeraj",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "package": "plasmo package",
+    "hoist": "plasmo build --hoist",
+    "build:no-minify": "plasmo build --no-minify",
+    "build:source-maps": "plasmo build --source-maps",
+    "build:zip": "plasmo build --zip"
   },
   "dependencies": {
     "@heroui/react": "^2.8.3",
@@ -21,6 +25,7 @@
     "plasmo": "0.90.5",
     "react": "19.1.1",
     "react-dom": "19.1.1",
+    "react-hook-form": "^7.62.0",
     "swr": "^2.3.6",
     "zustand": "^5.0.8"
   },
@@ -36,6 +41,10 @@
     "typescript": "5.9.2"
   },
   "manifest": {
+    "permissions": [
+      "storage",
+      "activeTab"
+    ],
     "host_permissions": [
       "https://*/*"
     ]

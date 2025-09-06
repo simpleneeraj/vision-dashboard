@@ -6,7 +6,6 @@ import useAppStore from "~store/slice/app"
 
 function AppUIProvider({ children }: React.PropsWithChildren) {
   const { state } = useAppStore()
-  console.log(state.display.appearance.colorScheme)
   return (
     <HeroUIProvider>
       <NextThemesProvider

@@ -14,7 +14,7 @@ const initialState: RootState = {
    * Navigation and screen management
    */
   navigation: {
-    screen: MenuScreenEnums.Apps,
+    screen: MenuScreenEnums.APPS,
     launchpad: {
       category: CategoryKey.HOME
     }
@@ -31,11 +31,11 @@ const initialState: RootState = {
       effects: {
         blur: {
           enabled: false,
-          intensity: BLUR_PRESETS.medium
+          intensity: BLUR_PRESETS.subtle
         },
         transparency: {
           enabled: false,
-          value: OPACITY_PRESETS.medium
+          value: OPACITY_PRESETS.transparent
         }
       }
     }

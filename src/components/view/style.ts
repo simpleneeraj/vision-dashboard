@@ -15,6 +15,7 @@ export const textStyle = tv({
       caption: "text-xs font-normal tracking-wide"
     },
     size: {
+      xs: "text-xs",
       sm: "text-sm",
       md: "text-base",
       lg: "text-lg",

@@ -11,7 +11,6 @@ import MainSection from "./main"
 /**
  * Preload APIs for faster, smoother performance.
  */
-
 preload(process.env.PLASMO_PUBLIC_ENVIRNOMENTS_CDN, fetcher)
 
 function NewTab() {

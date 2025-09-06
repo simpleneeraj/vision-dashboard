@@ -31,7 +31,7 @@ const AppMenus: React.FC<AppMenusProps> = ({}) => {
                 onPress={() => updateState("navigation.screen", item?.title)}>
                 <item.icon
                   className={cn(
-                    active ? "opacity-75" : "opacity-40",
+                    active ? "opacity-75" : "opacity-50",
                     "w-5 h-5"
                   )}
                 />
