@@ -1,4 +1,5 @@
-import { StorageKeys } from "~typings/enums"
+import type { MindfulnessStateType } from "~typings/app"
+import { StorageArea, StorageKeys } from "~typings/enums"
 
 import { createExtensionStore } from "../lib/creator"
 
@@ -8,11 +9,10 @@ const initialState = {
   timeLeft: 5 * 60
 }
 
-export type MindfulnessStateType = typeof initialState
-
 const useMindfulnessStore = createExtensionStore<MindfulnessStateType>(
   initialState,
-  StorageKeys.MINDFULNESS
+  StorageKeys.MINDFULNESS,
+  StorageArea.SESSION
 )
 
 export default useMindfulnessStore

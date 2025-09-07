@@ -35,6 +35,7 @@ const AppCarousel: React.FC<AppCarouselProps> = ({ apps }) => {
             exit="hidden">
             {currentApps.map((app) => (
               <MotionLink
+                key={app.href}
                 href={app.href}
                 target="_blank"
                 rel="noopener noreferrer"

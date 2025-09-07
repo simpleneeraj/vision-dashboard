@@ -13,7 +13,7 @@ const tabs = tv({
   slots: {
     tab: "h-full",
     tabContent: "text-xs",
-    tabList: "dark:bg-white/5 backdrop-blur-lg",
+    tabList: "bg-black/5 dark:bg-white/5 backdrop-blur-lg",
     cursor: "bg-black/10 dark:bg-white/10",
     panel: "flex flex-col"
   }
@@ -21,13 +21,13 @@ const tabs = tv({
 const slider = tv({
   base: "",
   slots: {
-    track: "dark:bg-white/5 backdrop-blur-lg"
+    track: "bg-black/5 dark:bg-white/5 backdrop-blur-lg"
   }
 })
 const switchStyle = tv({
   base: "",
   slots: {
-    wrapper: "dark:bg-white/5 backdrop-blur-lg"
+    wrapper: "bg-black/5 dark:bg-white/5 backdrop-blur-lg"
   }
 })
 

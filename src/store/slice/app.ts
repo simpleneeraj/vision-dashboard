@@ -1,15 +1,16 @@
 import { BLUR_PRESETS, OPACITY_PRESETS } from "~constants/presets"
-import type { RootState } from "~typings/app"
+import type { AppStateTypes } from "~typings/app"
 import {
   CategoryKey,
   MenuScreenEnums,
+  StorageArea,
   StorageKeys,
   Theme
 } from "~typings/enums"
 
 import { createExtensionStore } from "../lib/creator"
 
-const initialState: RootState = {
+const initialState: AppStateTypes = {
   /**
    * Navigation and screen management
    */
@@ -61,11 +62,10 @@ const initialState: RootState = {
   }
 }
 
-export type AppStateTypes = typeof initialState
-
 const useAppStore = createExtensionStore<AppStateTypes>(
   initialState,
-  StorageKeys.APP
+  StorageKeys.APP,
+  StorageArea.LOCAL
 )
 
 export default useAppStore

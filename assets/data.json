@@ -1,0 +1,4 @@
+{
+  "environments-cdn": "$PLASMO_PUBLIC_ENVIRONMENTS_CDN",
+  "vision-assets-url": "$PLASMO_PUBLIC_VISION_ASSET_URL"
+}

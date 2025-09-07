@@ -11,7 +11,7 @@ function AppUIProvider({ children }: React.PropsWithChildren) {
       <NextThemesProvider
         attribute="class"
         defaultTheme="dark"
-        forcedTheme={state.display.appearance.colorScheme}>
+        forcedTheme={state?.display?.appearance?.colorScheme}>
         {children}
       </NextThemesProvider>
     </HeroUIProvider>

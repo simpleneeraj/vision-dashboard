@@ -1,0 +1,28 @@
+import { Calendar, Card, CardBody } from "@heroui/react"
+import { parseDate } from "@internationalized/date"
+import React from "react"
+
+import View from "~components/view"
+
+export default function CalendarScreen() {
+  let [value, setValue] = React.useState(parseDate("2024-03-07"))
+
+  return (
+    <Card
+      shadow="none"
+      className="flex flex-col w-128  rounded-3xl bg-transparent items-center justify-center">
+      {/* Clock Content */}
+      <CardBody className="flex flex-col items-center justify-center p-8 ">
+        <View className="flex flex-col items-center justify-center border-[1rem] rounded-4xl overflow-hidden">
+          <Calendar
+            value={value}
+            color="danger"
+            showShadow={false}
+            onChange={setValue}
+            // className="light border-none shadow-none"
+          />
+        </View>
+      </CardBody>
+    </Card>
+  )
+}

@@ -1,34 +1,45 @@
-import { forOwn, has, isObject } from "lodash"
+import data from "data-env:assets/data.json"
+import { forOwn, isObject } from "lodash"
 import React from "react"
 import useSWR from "swr"
 
+import { fetcher } from "~services"
 import { Mode, Theme } from "~typings/enums"
 
-type Types = {
+type UseBackgroundsProps = {
   colorScheme: string
 }
-const useBackgrounds = ({ colorScheme }: Types) => {
-  const query = useSWR(process.env.PLASMO_PUBLIC_ENVIRNOMENTS_CDN)
 
-  const cdn = query.data || {}
+type ImageEntry = {
+  name: string
+  sources: Record<string, string>
+}
 
-  const items = React.useMemo(() => {
-    const day: any[] = []
-    const night: any[] = []
-    function flattenImages(obj: any, parentKey?: string) {
+const useBackgrounds = ({ colorScheme }: UseBackgroundsProps) => {
+  const { data: cdn = {} } = useSWR(data["environments-cdn"], fetcher)
+
+  const items = React.useMemo<ImageEntry[]>(() => {
+    const day: ImageEntry[] = []
+    const night: ImageEntry[] = []
+
+    const flattenImages = (obj: any, parentKey?: string) => {
       forOwn(obj, (value, key) => {
-        if (has(value, "sources") && isObject(value.sources)) {
-          const entry = { name: key, sources: value.sources }
+        if (isObject(value?.sources)) {
+          const entry: ImageEntry = { name: key, sources: value.sources }
 
-          // Use parent folder key to detect environment
-          if (parentKey?.toLowerCase() === Mode.DAY) day.push(entry)
-          else if (parentKey?.toLowerCase() === Mode.NIGHT) night.push(entry)
+          if (parentKey?.toLowerCase() === Mode.DAY) {
+            day.push(entry)
+          } else if (parentKey?.toLowerCase() === Mode.NIGHT) {
+            night.push(entry)
+          }
         } else if (isObject(value)) {
-          flattenImages(value, key) // pass current key as parent
+          flattenImages(value, key) // recurse into nested folders
         }
       })
     }
+
     flattenImages(cdn)
+
     return colorScheme === Theme.DARK ? night : day
   }, [cdn, colorScheme])
 

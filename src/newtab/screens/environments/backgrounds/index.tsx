@@ -33,15 +33,12 @@ const BackgroundsGrid: React.FC<BackgroundGridProps> = () => {
           return (
             <View
               key={item?.sources?.sm}
-              onClick={() =>
-                updateState("display.wallpaper.picture", item?.sources?.lg)
-              }
               className={cn(
                 "flex flex-col items-center justify-center rounded-2xl p-2 gap-2"
               )}
               title={startCase(item.name)}>
               {/* Preview image */}
-              <View
+              <button
                 className={cn(
                   "flex items-center justify-center rounded-full cursor-pointer h-28 w-28 overflow-hidden",
                   "border border-white/10",
@@ -51,14 +48,17 @@ const BackgroundsGrid: React.FC<BackgroundGridProps> = () => {
                   active
                     ? "bg-white/10 border-white/40 ring-2 ring-white/40 shadow-md"
                     : "bg-black/5"
-                )}>
+                )}
+                onClick={() =>
+                  updateState("display.wallpaper.picture", item?.sources?.lg)
+                }>
                 <Image
                   src={item?.sources?.sm}
                   alt={item.name}
                   removeWrapper
                   className="h-full w-full object-cover"
                 />
-              </View>
+              </button>
 
               {/* Room name */}
               {/* <View className="flex items-center justify-center">

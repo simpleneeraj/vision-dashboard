@@ -62,7 +62,7 @@ const BaseLayer: React.FC<BackgroundLayerProps> = ({}) => {
         className="absolute inset-0 pointer-events-none"
         style={{
           backdropFilter: blurFilter,
-          WebkitBackdropFilter: blurFilter as any // safari support
+          WebkitBackdropFilter: blurFilter // safari support
         }}
       />
 

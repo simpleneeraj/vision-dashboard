@@ -1,13 +1,18 @@
-import type { CategoryKey, MenuScreenEnums } from "./enums"
+import type {
+  CategoryKey,
+  ClockWidgets,
+  MenuScreenEnums,
+  NavigationDirection
+} from "./enums"
 
-export interface NavigationState {
+export type NavigationState = {
   screen: MenuScreenEnums
   launchpad: {
     category: CategoryKey
   }
 }
 
-export interface DisplayState {
+export type DisplayState = {
   appearance: {
     colorScheme: "auto" | "light" | "dark"
   }
@@ -26,7 +31,7 @@ export interface DisplayState {
   }
 }
 
-export interface OnboardingState {
+export type OnboardingState = {
   id: string | null
   email: string | null
   name: string | null
@@ -43,8 +48,20 @@ export interface OnboardingState {
   }
 }
 
-export interface RootState {
+export type AppStateTypes = {
   navigation: NavigationState
   display: DisplayState
   onboarding: OnboardingState
+}
+
+export type MindfulnessStateType = {
+  timer: number
+  isRunning: boolean
+  timeLeft: number
+}
+export type WidgetStateType = {
+  widget: ClockWidgets
+  navigation: {
+    direction: NavigationDirection
+  }
 }

@@ -6,18 +6,26 @@
   "author": "simpleneeraj",
   "scripts": {
     "dev": "plasmo dev",
-    "build": "plasmo build",
     "package": "plasmo package",
     "hoist": "plasmo build --hoist",
+    "build": "plasmo build",
     "build:no-minify": "plasmo build --no-minify",
     "build:source-maps": "plasmo build --source-maps",
-    "build:zip": "plasmo build --zip"
+    "build:zip": "plasmo build --zip",
+    "build:chrome": "plasmo build --target=chrome-mv3",
+    "build:firefox:v2": "plasmo build --target=firefox-mv2",
+    "build:firefox:v3": "plasmo build --target=firefox-mv3",
+    "build:edge": "plasmo build --target=edge-mv3",
+    "build:brave": "plasmo build --target=brave-mv3",
+    "build:opera": "plasmo build --target=opera-mv3",
+    "build:safari": "plasmo build --target=safari-mv3"
   },
   "dependencies": {
     "@heroui/react": "^2.8.3",
     "@plasmohq/storage": "^1.15.0",
     "axios": "^1.11.0",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.18",
     "immer": "^10.1.3",
     "lodash": "^4.17.21",
     "motion": "^12.23.12",
@@ -26,6 +34,7 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-hook-form": "^7.62.0",
+    "react-hotkeys-hook": "^5.1.0",
     "swr": "^2.3.6",
     "zustand": "^5.0.8"
   },

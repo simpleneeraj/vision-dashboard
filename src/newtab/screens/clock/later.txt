@@ -1,0 +1,59 @@
+
+{
+  /* <SegmentedGroup
+        selectedKey={selectedKey}
+        onSelectionChange={onSelectionChange}
+        aria-label="Environments Screen">
+        {tabs.map((item) => (
+          <SegmentedItem
+            key={item.key}
+            title={
+              <View className="flex items-center gap-2">
+                <item.icon className="size-4 opacity-75" />
+                {capitalize(item.key)}
+              </View>
+            }>
+            <React.Suspense
+              fallback={
+                <Fallback className="flex items-center justify-center min-w-80 h-144" />
+              }>
+              <View className="h-144 flex flex-col justify-center">
+                <item.screen />
+              </View>
+            </React.Suspense>
+          </SegmentedItem>
+        ))}
+      </SegmentedGroup> */
+}
+
+// const [selectedKey, setState] = React.useState<ClockTabs>(ClockTabs.CLOCK)
+// const onSelectionChange = (key: Key) => {
+//   setState(key as ClockTabs)
+// }
+// const tabs = [
+//   {
+//     key: ClockTabs.CLOCK,
+//     icon: SolarClockCircleBold,
+//     label: "Clock",
+//     screen: ClockDisplay
+//   },
+
+//   // {
+//   //   key: ClockTabs.TIMER,
+//   //   icon: SolarClockCircleBold,
+//   //   label: "Timer",
+//   //   screen: () => "TimerPanel"
+//   // }
+//   {
+//     key: ClockTabs.CALENDAR,
+//     icon: SolarCalendarBold,
+//     label: "Calendar",
+//     screen: CalendarScreen
+//   }
+//   // {
+//   //   key: ClockTabs.SETTINGS,
+//   //   icon: SolarSettingsBold,
+//   //   label: "Settings",
+//   //   screen: () => "SettingsPanel"
+//   // }
+// ]
