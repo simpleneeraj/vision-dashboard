@@ -94,7 +94,7 @@ export const googleApps = [
   {
     title: "YouTube",
     source:
-      "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/42711a44e5c74d383803a00a4e4ad25c_low_res_youtube.png",
+      "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/5207abd97262cc86e31c13fa9f13b774_low_res_YouTube.png",
     href: "https://youtube.com"
   }
 ]
