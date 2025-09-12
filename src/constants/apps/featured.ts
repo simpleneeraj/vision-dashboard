@@ -43,6 +43,12 @@ export const featuredApps = [
     href: "https://instagram.com"
   },
   {
+    title: "Games",
+    source:
+      "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/e9358b8ba8d7ef051fa9c2317b39eff7_Qt1b4p7FrB.png",
+    href: "https://play.unity.com/en"
+  },
+  {
     title: "YouTube",
     source:
       "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/42711a44e5c74d383803a00a4e4ad25c_low_res_youtube.png",

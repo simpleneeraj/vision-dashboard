@@ -2,6 +2,9 @@ import { Button } from "@heroui/react"
 import { capitalize } from "lodash"
 import React from "react"
 
+import { Storage } from "@plasmohq/storage"
+import { useStorage } from "@plasmohq/storage/hook"
+
 import BlurView from "~components/view/blur-view"
 import menus from "~constants/menus"
 import { cn } from "~lib/cn"
@@ -11,6 +14,16 @@ type AppMenusProps = {}
 
 const AppMenus: React.FC<AppMenusProps> = ({}) => {
   const { state, updateState } = useAppStore()
+
+  const [iState, setState, { isLoading }] = useStorage({
+    key: "hailing",
+    instance: new Storage({
+      area: "local",
+      allCopied: true
+    })
+  })
+
+  console.log("State -->", isLoading, iState)
 
   return (
     <div className="fixed top-1/2 left-[16%] z-20 flex items-center justify-center -translate-y-1/2">
@@ -28,7 +41,10 @@ const AppMenus: React.FC<AppMenusProps> = ({}) => {
                   active && "bg-white/20 backdrop-blur-sm"
                 )}
                 title={capitalize(item.title)}
-                onPress={() => updateState("navigation.screen", item?.title)}>
+                onPress={() => {
+                  setState(item)
+                  updateState("navigation.screen", item?.title)
+                }}>
                 <item.icon
                   className={cn(
                     active ? "opacity-75" : "opacity-50",

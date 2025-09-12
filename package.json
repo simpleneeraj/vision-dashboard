@@ -51,11 +51,11 @@
   },
   "manifest": {
     "permissions": [
-      "storage",
-      "activeTab"
+      "storage"
     ],
     "host_permissions": [
-      "https://*/*"
+      "https://cdn.jsdelivr.net/gh/monarchelite/*",
+      "https://parsefiles.back4app.com/*"
     ]
   }
 }
