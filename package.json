@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "next start",
-    "dev:next": "next dev --port 1947",
+    "dev:next": "next dev",
     "build:next": "next build",
     "dev": "plasmo dev",
     "package": "plasmo package",
