@@ -16,6 +16,18 @@ This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with
 
 ---
 
+## Screenshots
+
+| Main Dashboard                                          | Alternative Layout 1                                             | Alternative Layout 2                                             |
+| ------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| ![Vision Dashboard - Main Preview](/public/og-main.png) | ![Vision Dashboard - Alternative Layout 1](/public/og-alt-1.png) | ![Vision Dashboard - Alternative Layout 2](/public/og-alt-2.png) |
+
+| Focus Mode View                                        | Minimal Layout View                                          |     |
+| ------------------------------------------------------ | ------------------------------------------------------------ | --- |
+| ![Vision Dashboard - Focus Mode](/public/og-focus.png) | ![Vision Dashboard - Minimal Layout](/public/og-minimal.png) |     |
+
+---
+
 ## 🚀 Getting Started
 
 Install dependencies:
