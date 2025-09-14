@@ -33,7 +33,10 @@ module.exports = {
       height: sizes,
       minHeight: sizes,
       maxHeight: sizes,
-
+      fontFamily: {
+        silkscreen: ["var(--font-silkscreen)"],
+        "ibm-plex": ["var(--font-ibm-plex)"]
+      },
       colors: {
         "app-regal-gold": "#e1a140",
         "app-imperial-puce": "#532200",
@@ -59,6 +62,7 @@ module.exports = {
     heroui({
       defaultTheme: "dark",
       defaultExtendTheme: "dark"
-    })
+    }),
+    require("@tailwindcss/typography")
   ]
 }

@@ -1,4 +1,3 @@
-import data from "data-env:assets/data.json"
 import React from "react"
 import { preload } from "swr"
 
@@ -17,7 +16,11 @@ type MainSectionProps = {}
 /**
  * Preload APIs for faster, smoother performance.
  */
-preload(data["environments-cdn"], fetcher)
+preload(
+  process.env.PLASMO_PUBLIC_ENVIRONMENTS_CDN ||
+    process.env.NEXT_PUBLIC_ENVIRONMENTS_CDN,
+  fetcher
+)
 
 const MainSection: React.FC<MainSectionProps> = () => {
   const { state } = useAppStore()

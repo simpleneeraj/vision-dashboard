@@ -3,7 +3,6 @@ import { parseDate } from "@internationalized/date"
 import dayjs from "dayjs"
 import { motion } from "motion/react"
 import React from "react"
-import x from "url:assets/meshface-avatar-pack/meshface-avatar-4.png"
 
 import View from "~components/view"
 import BlurView from "~components/view/blur-view"

@@ -22,7 +22,7 @@ export const aiApps = [
     title: "Apple Intelligence",
     source:
       "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/c3e32d6e1971ee4e93389fa3f7e57c02_low_res_Apple_Intelligence_Dark_Mode.png",
-    href: "https://perplexity.ai"
+    href: "https://www.apple.com/in/apple-intelligence/"
   },
   {
     title: "Perplexity",
