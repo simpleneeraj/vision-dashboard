@@ -9,7 +9,7 @@ export default function Navigation() {
         <Link
           key={item.href}
           href={item.href}
-          className="text-sm font-medium hover:text-app-regal-gold hover:underline transition-colors">
+          className="text-sm font-medium hover:text-orange-500 hover:underline transition-colors">
           {item.label}
         </Link>
       ))}
