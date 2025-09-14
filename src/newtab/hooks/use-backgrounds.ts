@@ -1,4 +1,3 @@
-import data from "data-env:assets/data.json"
 import { forOwn, isObject } from "lodash"
 import React from "react"
 import useSWR from "swr"
@@ -16,7 +15,11 @@ type ImageEntry = {
 }
 
 const useBackgrounds = ({ colorScheme }: UseBackgroundsProps) => {
-  const { data: cdn = {} } = useSWR(data["environments-cdn"], fetcher)
+  const { data: cdn = {} } = useSWR(
+    process.env.PLASMO_PUBLIC_ENVIRONMENTS_CDN ||
+      process.env.NEXT_PUBLIC_ENVIRONMENTS_CDN,
+    fetcher
+  )
 
   const items = React.useMemo<ImageEntry[]>(() => {
     const day: ImageEntry[] = []

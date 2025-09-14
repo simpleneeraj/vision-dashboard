@@ -46,7 +46,7 @@ export const AboutScreen = () => (
           <a
             href="https://yourwebsite.com"
             target="_blank"
-            className="text-primary text-sm">
+            className="text-app-regal-gold text-sm">
             yourwebsite.com
           </a>
         }
@@ -61,7 +61,7 @@ export const AboutScreen = () => (
           <a
             href="https://yourwebsite.com/privacy"
             target="_blank"
-            className="text-primary text-sm">
+            className="text-app-regal-gold text-sm">
             View
           </a>
         }
@@ -76,7 +76,7 @@ export const AboutScreen = () => (
           <a
             href="https://yourwebsite.com/terms"
             target="_blank"
-            className="text-primary text-sm">
+            className="text-app-regal-gold text-sm">
             View
           </a>
         }

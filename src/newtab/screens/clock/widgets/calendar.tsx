@@ -1,6 +1,7 @@
 import { Calendar, Card, useDisclosure } from "@heroui/react"
 import { parseDate } from "@internationalized/date"
 import dayjs from "dayjs"
+import { motion } from "motion/react"
 import React from "react"
 
 import View from "~components/view"
@@ -8,11 +9,13 @@ import BlurView from "~components/view/blur-view"
 import { Text } from "~components/view/text"
 import { useInterval } from "~hooks/use-interval"
 
+import { avatars } from "../data"
 import IconPicker from "./icon-picker"
 
 type TimeDateWidgetProps = {}
 
 const CalendarWidget: React.FC<TimeDateWidgetProps> = () => {
+  const [selected, setSelected] = React.useState(avatars?.[2])
   const [now, setNow] = React.useState(new Date())
 
   useInterval(() => {
@@ -29,68 +32,50 @@ const CalendarWidget: React.FC<TimeDateWidgetProps> = () => {
         <IconPicker
           isOpen={isOpen}
           onOpenChange={onOpenChange}
-          onSelect={(icon) => console.log("Selected:", icon.alt)}
-          icons={[
-            {
-              src: "https://img.icons8.com/emoji/48/couple-with-heart.png",
-              alt: "couple-with-heart"
-            },
-            {
-              src: "https://img.icons8.com/dusk/64/pixel-cat.png",
-              alt: "smiling-face"
-            },
-            {
-              src: "https://img.icons8.com/color/48/minecraft-golden-apple.png",
-              alt: "heart"
-            },
-            {
-              src: "https://img.icons8.com/pulsar-gradient/48/pixel-heart.png",
-              alt: "star"
-            },
-            {
-              src: "https://img.icons8.com/emoji/48/couple-with-heart.png",
-              alt: "couple-with-heart"
-            },
-            {
-              src: "https://img.icons8.com/dusk/64/pixel-cat.png",
-              alt: "smiling-face"
-            },
-            {
-              src: "https://img.icons8.com/color/48/minecraft-golden-apple.png",
-              alt: "heart"
-            },
-            {
-              src: "https://img.icons8.com/pulsar-gradient/48/pixel-heart.png",
-              alt: "star"
-            },
-            {
-              src: "https://img.icons8.com/emoji/48/couple-with-heart.png",
-              alt: "couple-with-heart"
-            },
-            {
-              src: "https://img.icons8.com/dusk/64/pixel-cat.png",
-              alt: "smiling-face"
-            },
-            {
-              src: "https://img.icons8.com/color/48/minecraft-golden-apple.png",
-              alt: "heart"
-            },
-            {
-              src: "https://img.icons8.com/pulsar-gradient/48/pixel-heart.png",
-              alt: "star"
-            }
-          ]}>
+          onSelect={(icon) => setSelected(icon)}
+          icons={avatars}>
           <Card
             shadow="none"
-            className="bg-transparent h-20 w-20 flex items-center justify-center rounded-xl hover:bg-white/10 z-10 p-2"
+            className="bg-transparent h-20 w-20 flex items-center justify-center   
+             hover:bg-white/10 z-10 "
             isPressable
             onPress={onOpen}>
-            <img
-              width="72"
-              height="72"
-              src="https://img.icons8.com/pulsar-color/48/pixel-heart.png"
-              alt="pixel-cat"
-              className="h-full w-full"
+            <motion.img
+              src={selected?.src!}
+              alt={selected?.alt}
+              className="h-full w-full object-cover"
+              style={{
+                clipPath: `polygon(
+        10% 0%, 20% 5%, 30% 0%, 40% 5%, 50% 0%, 
+        60% 5%, 70% 0%, 80% 5%, 90% 0%, 100% 10%, 
+        95% 20%, 100% 30%, 95% 40%, 100% 50%, 
+        95% 60%, 100% 70%, 95% 80%, 100% 90%, 
+        90% 100%, 80% 95%, 70% 100%, 60% 95%, 
+        50% 100%, 40% 95%, 30% 100%, 20% 95%, 
+        10% 100%, 0% 90%, 5% 80%, 0% 70%, 
+        5% 60%, 0% 50%, 5% 40%, 0% 30%, 
+        5% 20%, 0% 10%
+      )`
+              }}
+              animate={{
+                y: [0, -4, 0], // floating
+                rotate: [6, 8, 6], // tiny wobble
+                scale: [1, 1.02, 1] // subtle pulse
+              }}
+              transition={{
+                duration: 6,
+                ease: "easeInOut",
+                repeat: Infinity
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotate: 10,
+                transition: { type: "spring", stiffness: 200 }
+              }}
+              whileTap={{
+                scale: 0.95,
+                rotate: -5
+              }}
             />
           </Card>
         </IconPicker>
@@ -104,7 +89,7 @@ const CalendarWidget: React.FC<TimeDateWidgetProps> = () => {
       <View className="flex flex-col items-center justify-center gap-2">
         <Calendar
           calendarWidth={"100%"}
-          value={parseDate(dayjs(now).format("YYYY-MM-DD"))}
+          defaultValue={parseDate(dayjs(now).format("YYYY-MM-DD"))}
           showShadow={false}
           color="foreground"
           classNames={{

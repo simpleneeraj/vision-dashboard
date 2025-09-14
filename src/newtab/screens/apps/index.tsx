@@ -22,6 +22,7 @@ const AppsScreen: React.FC<AppsScreenProps> = ({}) => {
   return (
     <View className="flex flex-col items-center justify-center">
       <SegmentedGroup
+        keyboardActivation="manual"
         selectedKey={selectedKey}
         onSelectionChange={onSelectionChange}
         aria-label="Tabs colors">
@@ -30,7 +31,10 @@ const AppsScreen: React.FC<AppsScreenProps> = ({}) => {
             key={tab.key}
             title={tab.title}
             className="flex flex-col">
-            <AppCarousel apps={tab.links || []} />
+            <AppCarousel
+              // apps={orderBy(tab?.links || [], ["title"], ["asc"])}
+              apps={tab?.links || []}
+            />
           </SegmentedItem>
         ))}
         <SegmentedItem

@@ -28,7 +28,9 @@ const initialState: AppStateTypes = {
       colorScheme: Theme.DARK
     },
     wallpaper: {
-      picture: process.env.PLASMO_PUBLIC_VISION_ASSET_URL || "",
+      picture:
+        process.env.PLASMO_PUBLIC_VISION_ASSET_URL ||
+        process.env.NEXT_PUBLIC_VISION_ASSET_URL,
       effects: {
         blur: {
           enabled: false,
